@@ -37,7 +37,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-sm-6">
-              <input type="number" class="form-control" list="tel-ex" id="inputNumber" placeholder="Tel number" required>
+              <input type="tel" class="form-control" list="tel-ex" id="inputNumber" placeholder="Tel number" required>
               <datalist id="tel-ex">
                 <option>+998</option>
               </datalist>
@@ -55,6 +55,13 @@
           <button id="btn-classmates" class="btn col btn-primary">Classmates</button>
         </div>
         <div class="contact-area">
+          <template id="template">
+            <div class="contact p-3 border border-start rounded">
+              <h4 class="contact__title"></h4>
+              <p class="contact__rel"></p>
+              <a href="#" class="btn btn-success tel-btn"></a>
+            </div>
+          </template>
         </div>
       </div>
     </div>

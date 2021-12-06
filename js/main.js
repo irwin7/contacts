@@ -10,36 +10,23 @@ let elBtnAll = document.getElementById("btn-all");
 let elContactArea = document.querySelector(".contact-area");
 let arr = [];
 let template = document.querySelector("#template").content;
-
 elAddBtn.addEventListener("click", addContact)
 function addContact(e){
   e.preventDefault();
-  if(elInputName.value != "" && elInputNumber.value != "" && elInputRel.value != ""){
+
+  let userPhone = arr.filter(item => item.num === elInputNumber.value)
+
+  if(elInputName.value != "" && elInputNumber.value != "" && elInputRel.value != "" && userPhone.length === 0){
     let obj = {
       fullName: elInputName.value + " " + elInputLName.value,
       rel: elInputRel.value,
       num: elInputNumber.value
     };
-    console.log(isSame);
-    if(isSame != true){
-      arr.push(obj);
-      render(arr);
-    }else{
-      alert("bunday raqam mavjud")
-    }
+    arr.push(obj)
+    render(arr);
     document.querySelectorAll('.form-control').forEach(inp => {inp.value = ''})
-    }
+  }
 }
-  let isSame = false;
-  elInputNumber.addEventListener("keyup",()=>{
-  arr.forEach((item) => {
-    if(item.num == elInputNumber.value){
-      isSame = true;
-    }else{
-      isSame = false;
-    }
-  });
-})
 function render(array) {
   elContactArea.innerHTML = ""
 

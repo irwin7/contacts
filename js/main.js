@@ -20,17 +20,18 @@ function addContact(e){
       rel: elInputRel.value,
       num: elInputNumber.value
     };
-    arr.push(obj);
-    document.querySelectorAll('.form-control').forEach(inp => {inp.value = ''})
+    console.log(isSame);
     if(isSame != true){
+      arr.push(obj);
       render(arr);
     }else{
       alert("bunday raqam mavjud")
     }
-  }
+    document.querySelectorAll('.form-control').forEach(inp => {inp.value = ''})
+    }
 }
   let isSame = false;
-elInputNumber.addEventListener("keyup",()=>{
+  elInputNumber.addEventListener("keyup",()=>{
   arr.forEach((item) => {
     if(item.num == elInputNumber.value){
       isSame = true;
